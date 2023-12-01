@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/htmx.org@1.9.9" integrity="sha384-QFjmbokDn2DjBjq+fM+8LUIVrAgqcNW2s0PjAxHETgRn9l4fvX31ZxDxvwQnyMOX" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/static/form.js"></script>
+    <link type="text/css" rel="stylesheet" href="/static/checkbox.css">
+</head>
+<body class="min-h-screen flex flex-col font-serif">
+    <head>
+    </head>
+
+    <main style="grid-template-columns: minmax(300px, 400px) 1fr;" class="grid grow">
+        <section class="bg-slate-300 p-8">
+            <h1 class="text-center text-3xl select-none mb-4">Projetos</h1>
+
+            <ol class="list-none flex flex-col items-start gap-y-2" hx-trigger="load once" hx-get="/view/projects">
+            </ol>
+        </section>
+
+        <section id="project-painel" class="bg-slate-200">
+        </section>
+    </main>
+
+    <footer>Created using Golang + HTMX</footer>
+</body>
+</html>
